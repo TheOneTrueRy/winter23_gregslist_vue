@@ -1,18 +1,20 @@
 import { AppState } from "../AppState.js";
+import { Car } from "../models/Car.js";
+import { logger } from "../utils/Logger.js";
 import { api } from "./AxiosService.js";
 
 class CarsService {
 
   async getCars() {
     const res = await api.get('auth/api/cars')
-    console.log('[get cars]', res.data)
-    AppState.cars = res.data
-    console.log(AppState.cars);
+    logger.log('[get cars]', res.data)
+    AppState.cars = res.data.map(c => new Car(c))
+    logger.log(AppState.cars);
   }
 
   async createCar(carData) {
     const res = await api.post('auth/api/cars', carData)
-    AppState.cars.push(res.data)
+    AppState.cars.push(new Car(res.data))
     return res.data
     // TODO something fancy with the router
   }

@@ -1,9 +1,9 @@
 <template>
   <div class="carsPage">
 
-    <div class="container">
-      <div class="row flex-grow-1">
-        <div class="col-md-4 my-3" v-for="c in cars">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-4 p-3" v-for="c in cars">
           <CarCard :car="c" />
         </div>
 

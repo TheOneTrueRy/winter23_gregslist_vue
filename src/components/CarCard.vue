@@ -1,7 +1,7 @@
 <template>
-  <div class="CarCard card">
+  <div class="CarCard card h-100">
     <router-link :to="{ name: 'Car', params: { carId: car.id } }">
-      <img class="rounded-top img-fluid w-100" :src="car.imgUrl" :alt="car.make + ' ' + car.model">
+      <img class="rounded-top img-fluid w-100 cardImg" :src="car.imgUrl" :alt="car.make + ' ' + car.model">
     </router-link>
 
     <div class="card-body">
@@ -17,9 +17,11 @@
 
 
 <script>
+import { Car } from "../models/Car.js";
+
 export default {
   props: {
-    car: { type: Object, required: true },
+    car: { type: Car, required: true },
     showSeller: { type: Boolean, default: true }
   },
   setup() {

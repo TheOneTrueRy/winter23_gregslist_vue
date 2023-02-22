@@ -1,5 +1,5 @@
 <template>
-  <header class="p-3">
+  <header class="p-3 text-center">
     <div>
 
 
@@ -8,18 +8,20 @@
         <Login />
       </div>
 
-      <div class="mb-2">
+      <div class="mb-2 nice">
         <router-link class="text-success lighten-30 selectable text-uppercase" :to="{name: 'Cars'}">
           CARS
         </router-link>
       </div>
-      <div>
+      <div class="mb-2 nice">
         <router-link :to="{name: 'Houses'}" class="text-success lighten-30 selectable text-uppercase">
           HOUSES
         </router-link>
       </div>
-      <div>
-        JOBS
+      <div class="nice">
+        <router-link :to="{name: 'Jobs'}" class="text-success lighten-30 selectable text-uppercase">
+          JOBS
+        </router-link>
       </div>
 
     </div>
@@ -54,5 +56,12 @@ footer {
   display: grid;
   place-content: center;
   height: 32px;
+}
+
+.nice{
+  transition: 0.5s;
+}
+.nice:hover{
+  transform: scale(1.1);
 }
 </style>
