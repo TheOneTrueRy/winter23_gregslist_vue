@@ -26,6 +26,11 @@
         name="price">
     </div>
     <div class="mb-3">
+      <label for="year" class="form-label">year</label>
+      <input required type="number" v-model="editable.year" class="form-control" id="year" placeholder="year..."
+        name="year">
+    </div>
+    <div class="mb-3">
       <label for="description" class="form-label">description</label>
       <textarea name="description" v-model="editable.description" class="form-control" id="description"
         rows="3"></textarea>
@@ -41,6 +46,7 @@
 
 
 <script>
+import { ref } from "vue";
 import { router } from "../router.js";
 import { housesService } from "../services/HousesService.js";
 import Pop from "../utils/Pop.js";

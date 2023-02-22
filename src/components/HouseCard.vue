@@ -6,6 +6,10 @@
   <div class="card-body">
     <p><b>{{ house.bedrooms }} bedrooms - {{ house.bathrooms }} bathrooms - ${{ house.price }} </b></p>
   </div>
+  <div class="card-footer text-end">
+    <span class="on-hover me-2">{{ house.seller.name }}</span>
+    <img :src="house.seller.picture" :alt="house.seller.name" height="40" width="40" class="rounded-circle">
+  </div>
 </div>
 </template>
 

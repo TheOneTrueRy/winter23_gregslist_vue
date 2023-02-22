@@ -13,7 +13,7 @@ class HousesService{
 
   async createHouse(houseData){
     const res = await api.post('auth/api/houses', houseData)
-    AppState.houses.unshift(new House(res.data))
+    AppState.houses.push(new House(res.data))
     return res.data
   }
 

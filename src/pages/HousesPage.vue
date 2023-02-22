@@ -6,7 +6,19 @@
           <HouseCard :house="h"/>
         </div>
       </div>
+      <div class="row sticky-bottom" v-if="account.id">
+        <div class="col-12 text-end">
+          <button class="fs-5 btn btn-dark" data-bs-toggle="modal" data-bs-target="#house-modal">🏡</button>
+        </div>
+      </div>
     </div>
+
+
+  <Modal id="house-modal" modal-title="Add a House 🏡">
+    <HouseForm/>
+  </Modal>
+
+
   </div>
 </template>
 
