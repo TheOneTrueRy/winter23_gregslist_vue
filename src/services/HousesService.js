@@ -22,6 +22,20 @@ class HousesService{
     let i = AppState.houses.findIndex(h => h.id == houseData.id)
     AppState.houses.splice(i, 1, new House(res.data))
   }
+
+  async deleteHouse(houseId){
+    const res = await api.delete('auth/api/houses' + houseId)
+    let i = AppState.houses.findIndex(h => h.id == houseId)
+    if(i != -1){
+      AppState.houses.splice(i, 1)
+    }
+  }
+
+  async getHouseById(houseId){
+    AppState.house = null
+    const res = await api.get('auth/api/houses/' + houseId)
+    AppState.house = res.data
+  }
 }
 
 export const housesService = new HousesService()

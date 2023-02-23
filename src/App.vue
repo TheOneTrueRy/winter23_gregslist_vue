@@ -64,4 +64,9 @@ footer {
 .nice:hover{
   transform: scale(1.1);
 }
+
+main{
+  max-height: 100vh;
+  overflow-y: auto;
+}
 </style>
